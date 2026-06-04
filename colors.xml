@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand colors -->
+    <color name="green_primary">#00C853</color>
+    <color name="green_dark">#00963E</color>
+    <color name="green_dim">#1A3D2B</color>
+    <color name="green_glow">#2600C853</color>
+
+    <color name="black">#000000</color>
+    <color name="surface">#0A0A0A</color>
+    <color name="surface2">#111111</color>
+    <color name="surface3">#1A1A1A</color>
+    <color name="surface4">#222222</color>
+    <color name="divider">#1E1E1E</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="gray_light">#CCCCCC</color>
+    <color name="gray">#888888</color>
+    <color name="gray_dark">#444444</color>
+
+    <color name="red">#FF3B3B</color>
+    <color name="yellow">#FFD600</color>
+    <color name="blue">#0096FF</color>
+    <color name="purple">#9632FF</color>
+    <color name="orange">#FF9600</color>
+
+    <!-- Status colors -->
+    <color name="status_online">#00C853</color>
+    <color name="status_offline">#888888</color>
+    <color name="status_error">#FF3B3B</color>
+    <color name="status_warning">#FFD600</color>
+
+    <!-- Signal quality -->
+    <color name="signal_excellent">#00C853</color>
+    <color name="signal_good">#7BC853</color>
+    <color name="signal_fair">#FFD600</color>
+    <color name="signal_weak">#FF3B3B</color>
+
+    <!-- Notification -->
+    <color name="notification_bg">#111111</color>
+</resources>

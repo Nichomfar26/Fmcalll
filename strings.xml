@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FMcall Serval</string>
+    <string name="app_slogan">Communiquer partout, même sans Internet.</string>
+
+    <!-- Mesh status -->
+    <string name="mesh_online">Réseau Mesh actif</string>
+    <string name="mesh_starting">Démarrage du réseau…</string>
+    <string name="mesh_offline">Réseau hors ligne</string>
+    <string name="mesh_error">Erreur réseau</string>
+    <string name="nodes_connected">nœud connecté</string>
+    <string name="nodes_connected_plural">nœuds connectés</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Accueil</string>
+    <string name="nav_calls">Appels</string>
+    <string name="nav_messages">Messages</string>
+    <string name="nav_network">Réseau</string>
+    <string name="nav_settings">Paramètres</string>
+
+    <!-- Calls -->
+    <string name="incoming_call">Appel entrant</string>
+    <string name="outgoing_call">Appel sortant</string>
+    <string name="call_answer">Répondre</string>
+    <string name="call_reject">Refuser</string>
+    <string name="call_hangup">Raccrocher</string>
+    <string name="call_mute">Muet</string>
+    <string name="call_speaker">Haut-parleur</string>
+    <string name="call_connecting">Connexion en cours…</string>
+    <string name="call_encrypted">🔒 Chiffré • Wi-Fi Direct</string>
+    <string name="call_no_answer">Pas de réponse</string>
+    <string name="recent_calls">Appels récents</string>
+
+    <!-- Messages -->
+    <string name="new_message">Nouveau message</string>
+    <string name="message_hint">Message chiffré…</string>
+    <string name="send">Envoyer</string>
+    <string name="attach_file">Joindre un fichier</string>
+    <string name="no_conversations">Aucune conversation</string>
+
+    <!-- Nodes -->
+    <string name="scan_mesh">Scanner le réseau</string>
+    <string name="scanning">Scan en cours…</string>
+    <string name="active_nodes">Nœuds actifs</string>
+    <string name="hops">saut(s)</string>
+
+    <!-- Settings -->
+    <string name="profile">Profil</string>
+    <string name="edit_profile">Modifier</string>
+    <string name="mesh_network">Réseau Mesh</string>
+    <string name="wifi_mesh">Wi-Fi Mesh</string>
+    <string name="bluetooth_mesh">Bluetooth Mesh</string>
+    <string name="relay_mode">Mode Relais</string>
+    <string name="mesh_channel">Canal Mesh</string>
+    <string name="security">Sécurité</string>
+    <string name="e2e_encryption">Chiffrement E2E</string>
+    <string name="unknown_nodes">Nœuds inconnus</string>
+    <string name="block">Bloquer</string>
+    <string name="crypto_keys">Clés cryptographiques</string>
+    <string name="manage">Gérer</string>
+    <string name="system">Système</string>
+    <string name="language">Langue</string>
+    <string name="battery_save">Mode Économie</string>
+    <string name="connection_logs">Journal connexions</string>
+    <string name="view">Voir</string>
+    <string name="version">Version</string>
+
+    <!-- Permissions -->
+    <string name="permissions_required">Permissions requises</string>
+    <string name="permissions_message">FMcall Serval nécessite l\'accès au Wi-Fi, Bluetooth et microphone pour fonctionner sans Internet.</string>
+    <string name="retry">Réessayer</string>
+    <string name="quit">Quitter</string>
+
+    <!-- Splash -->
+    <string name="get_started">Démarrer</string>
+</resources>

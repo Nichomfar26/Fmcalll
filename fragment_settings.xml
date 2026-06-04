@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="32dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paramètres"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:padding="16dp"/>
+
+        <!-- Profile card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/surface2"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/divider"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    app:cardCornerRadius="32dp"
+                    app:cardBackgroundColor="@color/green_primary"
+                    app:cardElevation="0dp"
+                    android:layout_marginEnd="16dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/tv_profile_initials"
+                        android:textColor="@color/black"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_profile_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_profile_mesh_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/green_primary"
+                        android:textSize="12sp"
+                        android:fontFamily="monospace"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_edit_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Modifier"
+                    android:textSize="12sp"
+                    android:backgroundTint="@color/surface3"
+                    android:textColor="@color/white"
+                    style="@style/Widget.MaterialComponents.Button"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section: Réseau Mesh -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RÉSEAU MESH"
+            android:textColor="@color/gray"
+            android:textSize="11sp"
+            android:textAllCaps="true"
+            android:letterSpacing="0.1"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/surface2"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/divider"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Wi-Fi Mesh toggle -->
+                <LinearLayout android:id="@+id/row_wifi"
+                    style="@style/SettingsRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="📶" android:textSize="20sp" android:layout_marginEnd="14dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Wi-Fi Mesh"
+                        android:textColor="@color/white" android:textSize="15sp"/>
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_wifi"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:trackTint="@color/switch_track_selector"
+                        app:thumbTint="@color/switch_thumb_selector"/>
+                </LinearLayout>
+
+                <View style="@style/Divider"/>
+
+                <!-- Bluetooth Mesh toggle -->
+                <LinearLayout android:id="@+id/row_bluetooth"
+                    style="@style/SettingsRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🦷" android:textSize="20sp" android:layout_marginEnd="14dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Bluetooth Mesh"
+                        android:textColor="@color/white" android:textSize="15sp"/>
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_bluetooth"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="true"
+                        app:trackTint="@color/switch_track_selector"
+                        app:thumbTint="@color/switch_thumb_selector"/>
+                </LinearLayout>
+
+                <View style="@style/Divider"/>
+
+                <!-- Relay Mode toggle -->
+                <LinearLayout android:id="@+id/row_relay"
+                    style="@style/SettingsRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="📡" android:textSize="20sp" android:layout_marginEnd="14dp"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Mode Relais" android:textColor="@color/white" android:textSize="15sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Transmet les paquets des autres nœuds"
+                            android:textColor="@color/gray" android:textSize="11sp"/>
+                    </LinearLayout>
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_relay"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        app:trackTint="@color/switch_track_selector"
+                        app:thumbTint="@color/switch_thumb_selector"/>
+                </LinearLayout>
+
+                <View style="@style/Divider"/>
+
+                <!-- Channel -->
+                <LinearLayout android:id="@+id/row_channel"
+                    style="@style/SettingsRow"
+                    android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="📻" android:textSize="20sp" android:layout_marginEnd="14dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Canal Mesh"
+                        android:textColor="@color/white" android:textSize="15sp"/>
+                    <TextView android:id="@+id/tv_channel_value"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textColor="@color/gray" android:textSize="13sp"
+                        android:fontFamily="monospace"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text=" ›" android:textColor="@color/gray" android:textSize="18sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section: Sécurité -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SÉCURITÉ"
+            android:textColor="@color/gray"
+            android:textSize="11sp"
+            android:textAllCaps="true"
+            android:letterSpacing="0.1"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/surface2"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/divider"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/SettingsRow">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🔒" android:textSize="20sp" android:layout_marginEnd="14dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Chiffrement E2E"
+                        android:textColor="@color/white" android:textSize="15sp"/>
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_e2e"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:checked="true" android:enabled="false"
+                        app:trackTint="@color/switch_track_selector"
+                        app:thumbTint="@color/switch_thumb_selector"/>
+                </LinearLayout>
+
+                <View style="@style/Divider"/>
+
+                <LinearLayout android:id="@+id/row_keys"
+                    style="@style/SettingsRow"
+                    android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🔑" android:textSize="20sp" android:layout_marginEnd="14dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Clés cryptographiques"
+                        android:textColor="@color/white" android:textSize="15sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Gérer ›" android:textColor="@color/gray" android:textSize="13sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section: Système -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SYSTÈME"
+            android:textColor="@color/gray"
+            android:textSize="11sp"
+            android:textAllCaps="true"
+            android:letterSpacing="0.1"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/surface2"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/divider"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout android:id="@+id/row_language"
+                    style="@style/SettingsRow"
+                    android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🌍" android:textSize="20sp" android:layout_marginEnd="14dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Langue"
+                        android:textColor="@color/white" android:textSize="15sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Français ›" android:textColor="@color/gray" android:textSize="13sp"/>
+                </LinearLayout>
+
+                <View style="@style/Divider"/>
+
+                <LinearLayout android:id="@+id/row_logs"
+                    style="@style/SettingsRow"
+                    android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="📋" android:textSize="20sp" android:layout_marginEnd="14dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Journal des connexions"
+                        android:textColor="@color/white" android:textSize="15sp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Voir ›" android:textColor="@color/gray" android:textSize="13sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Version -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FMcall Serval v1.0.0 • Open Mesh Protocol\n★ Communiquer partout, même sans Internet."
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:lineSpacingMultiplier="1.5"
+            android:fontFamily="monospace"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_node.xml -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="14dp"
+    android:background="?attr/selectableItemBackground">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/node_icon"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="@color/green_dim"
+        app:strokeColor="@color/green_primary"
+        app:strokeWidth="1dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+            android:text="📱" android:textSize="20sp" android:gravity="center"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/node_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="14dp"
+        app:layout_constraintStart_toEndOf="@id/node_icon"
+        app:layout_constraintEnd_toStartOf="@id/node_signal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView android:id="@+id/tv_node_name"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="@color/white" android:textSize="15sp" android:textStyle="bold"/>
+        <TextView android:id="@+id/tv_node_mesh_id"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="@color/green_primary" android:textSize="11sp"
+            android:fontFamily="monospace" android:layout_marginTop="2dp"/>
+        <TextView android:id="@+id/tv_node_meta"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="@color/gray" android:textSize="11sp" android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/node_signal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView android:id="@+id/tv_signal_quality"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="@color/green_primary" android:textSize="14sp"
+            android:fontFamily="monospace" android:layout_marginBottom="6dp"/>
+        <TextView android:id="@+id/tv_hop_badge"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="@color/gray" android:textSize="11sp"
+            android:background="@drawable/bg_badge" android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp" android:fontFamily="monospace"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

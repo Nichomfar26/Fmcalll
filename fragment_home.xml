@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="FMcall Serval"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- Mesh Status Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/surface2"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/divider"
+            app:strokeWidth="1dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <View
+                        android:id="@+id/mesh_status_indicator"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:background="@drawable/dot_green"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_mesh_status"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/mesh_online"
+                        android:textColor="@color/gray"
+                        android:textSize="12sp"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wi-Fi Direct"
+                        android:textColor="@color/green_primary"
+                        android:textSize="11sp"
+                        android:background="@drawable/badge_green"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="3dp"/>
+                </LinearLayout>
+
+                <!-- Stats row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_stat"
+                        android:padding="10dp"
+                        android:gravity="center"
+                        android:layout_marginEnd="6dp">
+                        <TextView
+                            android:id="@+id/tv_node_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/green_primary"
+                            android:textSize="24sp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="NŒUDS"
+                            android:textColor="@color/gray"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_stat"
+                        android:padding="10dp"
+                        android:gravity="center"
+                        android:layout_marginEnd="6dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8"
+                            android:textColor="@color/green_primary"
+                            android:textSize="24sp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SAUTS MAX"
+                            android:textColor="@color/gray"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_stat"
+                        android:padding="10dp"
+                        android:gravity="center">
+                        <TextView
+                            android:id="@+id/tv_user_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="--ms"
+                            android:textColor="@color/green_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="LATENCE"
+                            android:textColor="@color/gray"
+                            android:textSize="10sp"
+                            android:letterSpacing="0.1"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Scan button -->
+                <Button
+                    android:id="@+id/btn_scan"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Scanner le réseau Mesh"
+                    android:textSize="13sp"
+                    android:backgroundTint="@color/surface3"
+                    android:textColor="@color/green_primary"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+                <ProgressBar
+                    android:id="@+id/scan_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:indeterminateTint="@color/green_primary"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Nav Grid 2x2 -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:useDefaultMargins="true">
+
+            <!-- Calls -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_calls"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="6dp"
+                app:cardBackgroundColor="@color/surface2"
+                app:cardCornerRadius="20dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                app:cardElevation="0dp"
+                android:clickable="true"
+                android:focusable="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp">
+                    <TextView android:layout_width="52dp" android:layout_height="52dp"
+                        android:text="📞" android:textSize="26sp" android:gravity="center"
+                        android:background="@drawable/bg_icon_green" android:layout_marginBottom="10dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/nav_calls" android:textColor="@color/white"
+                        android:textSize="15sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Messages -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_messages"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="6dp"
+                app:cardBackgroundColor="@color/surface2"
+                app:cardCornerRadius="20dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                app:cardElevation="0dp"
+                android:clickable="true"
+                android:focusable="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp">
+                    <TextView android:layout_width="52dp" android:layout_height="52dp"
+                        android:text="💬" android:textSize="26sp" android:gravity="center"
+                        android:background="@drawable/bg_icon_blue" android:layout_marginBottom="10dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/nav_messages" android:textColor="@color/white"
+                        android:textSize="15sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Network -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_network"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="6dp"
+                app:cardBackgroundColor="@color/surface2"
+                app:cardCornerRadius="20dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                app:cardElevation="0dp"
+                android:clickable="true"
+                android:focusable="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp">
+                    <TextView android:layout_width="52dp" android:layout_height="52dp"
+                        android:text="🌐" android:textSize="26sp" android:gravity="center"
+                        android:background="@drawable/bg_icon_purple" android:layout_marginBottom="10dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/nav_network" android:textColor="@color/white"
+                        android:textSize="15sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Settings -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_settings"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="6dp"
+                app:cardBackgroundColor="@color/surface2"
+                app:cardCornerRadius="20dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                app:cardElevation="0dp"
+                android:clickable="true"
+                android:focusable="true">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp">
+                    <TextView android:layout_width="52dp" android:layout_height="52dp"
+                        android:text="⚙️" android:textSize="26sp" android:gravity="center"
+                        android:background="@drawable/bg_icon_orange" android:layout_marginBottom="10dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/nav_settings" android:textColor="@color/white"
+                        android:textSize="15sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </GridLayout>
+    </LinearLayout>
+</ScrollView>

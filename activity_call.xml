@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!-- Background gradient -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/bg_call_gradient"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Avatar -->
+    <FrameLayout
+        android:id="@+id/avatar_container"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="80dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="50dp"
+            app:cardBackgroundColor="@color/green_primary"
+            app:strokeColor="@color/green_dark"
+            app:strokeWidth="3dp">
+            <TextView
+                android:id="@+id/tv_initials"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="??"
+                android:textColor="@color/black"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+
+    <!-- Peer info -->
+    <TextView
+        android:id="@+id/tv_peer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/avatar_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_mesh_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green_primary"
+        android:textSize="13sp"
+        android:fontFamily="monospace"
+        app:layout_constraintTop_toBottomOf="@id/tv_peer_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="6dp"/>
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:text="00:00"
+        app:layout_constraintTop_toBottomOf="@id/tv_mesh_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_call_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        android:letterSpacing="0.05"
+        app:layout_constraintTop_toBottomOf="@id/tv_duration"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Active call buttons -->
+    <LinearLayout
+        android:id="@+id/active_call_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_mute"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="16dp"
+            android:src="@drawable/ic_mic_off"
+            android:background="@drawable/bg_call_action"
+            android:contentDescription="Muet"/>
+
+        <ImageButton
+            android:id="@+id/btn_hangup"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginHorizontal="16dp"
+            android:src="@drawable/ic_call_end"
+            android:background="@drawable/bg_call_hangup"
+            android:contentDescription="Raccrocher"/>
+
+        <ImageButton
+            android:id="@+id/btn_speaker"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="16dp"
+            android:src="@drawable/ic_speaker"
+            android:background="@drawable/bg_call_action"
+            android:contentDescription="Haut-parleur"/>
+    </LinearLayout>
+
+    <!-- Incoming call buttons -->
+    <LinearLayout
+        android:id="@+id/incoming_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="60dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="center" android:layout_marginHorizontal="30dp">
+            <ImageButton
+                android:id="@+id/btn_reject"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/ic_call_end"
+                android:background="@drawable/bg_call_hangup"
+                android:contentDescription="Refuser"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Refuser" android:textColor="@color/white" android:textSize="13sp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="center" android:layout_marginHorizontal="30dp">
+            <ImageButton
+                android:id="@+id/btn_answer"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/ic_call"
+                android:background="@drawable/bg_call_answer"
+                android:contentDescription="Répondre"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Répondre" android:textColor="@color/white" android:textSize="13sp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

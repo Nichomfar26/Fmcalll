@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.fmcall.serval.ui.main.HomeFragment"
+        android:label="Accueil">
+        <action android:id="@+id/action_home_to_calls"
+            app:destination="@id/callsFragment"/>
+        <action android:id="@+id/action_home_to_messages"
+            app:destination="@id/messagesFragment"/>
+        <action android:id="@+id/action_home_to_nodes"
+            app:destination="@id/nodesFragment"/>
+        <action android:id="@+id/action_home_to_settings"
+            app:destination="@id/settingsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/callsFragment"
+        android:name="com.fmcall.serval.ui.calls.CallsFragment"
+        android:label="Appels">
+        <action android:id="@+id/action_calls_to_contacts"
+            app:destination="@id/contactsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="com.fmcall.serval.ui.messages.MessagesFragment"
+        android:label="Messages">
+        <action android:id="@+id/action_messages_to_chat"
+            app:destination="@id/chatFragment"/>
+        <action android:id="@+id/action_messages_to_contacts"
+            app:destination="@id/contactsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.fmcall.serval.ui.messages.ChatFragment"
+        android:label="Chat">
+        <argument android:name="conversationId" app:argType="string" android:defaultValue=""/>
+        <argument android:name="peerName"       app:argType="string" android:defaultValue=""/>
+        <argument android:name="peerId"         app:argType="string" android:defaultValue=""/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nodesFragment"
+        android:name="com.fmcall.serval.ui.nodes.NodesFragment"
+        android:label="Réseau"/>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.fmcall.serval.ui.settings.SettingsFragment"
+        android:label="Paramètres"/>
+
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="com.fmcall.serval.ui.contacts.ContactsFragment"
+        android:label="Contacts"/>
+
+</navigation>

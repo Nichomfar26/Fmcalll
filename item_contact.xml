@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="12dp"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- Avatar -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/avatar_card"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:cardCornerRadius="25dp"
+        app:cardBackgroundColor="@color/green_dim"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_initials"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/green_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <!-- Online dot -->
+        <View
+            android:id="@+id/online_dot"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="1dp"
+            android:background="@drawable/dot_green"
+            android:visibility="gone"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Name + status -->
+    <LinearLayout
+        android:id="@+id/info_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toEndOf="@id/avatar_card"
+        app:layout_constraintEnd_toStartOf="@id/actions_container"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/tv_mesh_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green_primary"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:layout_marginTop="2dp"/>
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:textSize="11sp"
+            android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+    <!-- Action buttons -->
+    <LinearLayout
+        android:id="@+id/actions_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Voice call -->
+        <ImageButton
+            android:id="@+id/btn_call"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:src="@drawable/ic_call"
+            android:background="@drawable/bg_action_round_green"
+            android:tint="@color/green_primary"
+            android:contentDescription="Appel vocal"
+            android:layout_marginEnd="6dp"/>
+
+        <!-- Video call -->
+        <ImageButton
+            android:id="@+id/btn_video_call"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:src="@drawable/ic_videocam"
+            android:background="@drawable/bg_action_round_blue"
+            android:tint="@color/blue"
+            android:contentDescription="Appel vidéo"
+            android:layout_marginEnd="6dp"/>
+
+        <!-- Message -->
+        <ImageButton
+            android:id="@+id/btn_message"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:src="@drawable/ic_message"
+            android:background="@drawable/bg_action_round_purple"
+            android:tint="@color/purple"
+            android:contentDescription="Message"
+            android:layout_marginEnd="6dp"/>
+
+        <!-- Favorite -->
+        <ImageButton
+            android:id="@+id/btn_favorite"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_star_outline"
+            android:background="@android:color/transparent"
+            android:tint="@color/gray"
+            android:contentDescription="Favori"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

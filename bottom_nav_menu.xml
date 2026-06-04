@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/nav_home"/>
+    <item
+        android:id="@+id/callsFragment"
+        android:icon="@drawable/ic_call"
+        android:title="@string/nav_calls"/>
+    <item
+        android:id="@+id/messagesFragment"
+        android:icon="@drawable/ic_message"
+        android:title="@string/nav_messages"/>
+    <item
+        android:id="@+id/nodesFragment"
+        android:icon="@drawable/ic_mesh_signal"
+        android:title="@string/nav_network"/>
+</menu>
